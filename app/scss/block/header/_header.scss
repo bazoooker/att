@@ -1,0 +1,56 @@
+// block
+.header {
+	height: 115px;
+	background: transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 4;
+
+	&__wrapper {
+		@include flex-row(nowrap,space-between,stretch);
+		height: 100%;
+	}
+	&__info {
+		flex-grow: 1;
+		height: 100%;
+	}
+	&__top {
+		@include flex-row(nowrap,space-between,center);
+		height: 50%;
+		border-bottom: 1px solid rgba(255,255,255,.4);
+
+	}
+	&__bot {
+		height: 50%;
+		@include flex-row(nowrap,center,center);
+	}
+}
+
+
+// modificators
+@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 992px) {}
+@media screen and (max-width: 768px) {
+	.header {
+		.header__bot {
+			display: none;
+		}
+		.header__top {
+			border-bottom: 0;
+			justify-content: flex-end;
+			height: 100%;
+		}
+	}
+	.header__wrapper {
+		align-items: center;
+	}
+}
+@media screen and (max-width: 568px) {
+	.header__info {
+		display: none;
+	}
+}
+@media screen and (max-width: 413px) {}

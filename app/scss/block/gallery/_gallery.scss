@@ -1,0 +1,86 @@
+#gallery {
+
+	.gallery-slide__photo:not(.gallery-slide__btn) {
+		position: relative;
+		&::before {
+			@include pseudo;
+			top: 0;
+			left: 0;
+			width: 0%;
+			height: 100%;
+			background-color: #d6fffb;
+			// background-size: 40px;
+			z-index: 3;
+			transition: 400ms;
+			box-shadow: 0 0 0 1px rgba(255,255,255,.2) inset;
+			transition-delay: 400ms;
+		}
+		&::after {
+			@include pseudo;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 0%;
+			z-index: 4;
+			background: #03afd4 url(/img/bg/sea-white.png) no-repeat center center;
+			background-size: 80px;
+			// @include gr-blue;
+			transition: 400ms;
+			box-shadow: 0 0 0 1px rgba(255,255,255,.2) inset;
+			transition-delay: 0ms;
+		}
+	}
+	&.reload {
+		.gallery-slide__photo {
+			&::before {
+				width: 100%;
+				transition-delay: 0ms;
+			}
+			&::after {
+				height: 100%;
+				transition-delay: 400ms;
+			}
+		}
+	}
+}
+
+.gallery {
+	@include flex-row(nowrap,center,center);
+	position: relative;
+	&::before {
+		@include pseudo;
+		width: 100%;
+		height: 380px;
+		top: -350px;
+		left: 0;
+		z-index: -1;
+		background-image: url(/img/bg/11-gallery/bg-gallery_top-dark.png);
+		background-size: cover;
+		background-position: bottom center;
+		background-repeat: no-repeat;
+
+	}
+	&::after {
+		@include pseudo;
+		width: 100%;
+		height:300px;
+		z-index: -2;
+		top: -375px;
+		left: 0;
+		background-image: url(/img/bg/11-gallery/bg-gallery_top-bright.png);
+		background-size: cover;
+		background-position: bottom center;
+		background-repeat: no-repeat;
+	}
+}
+
+@media screen and (max-width: 1200px) 	{}
+@media screen and (max-width: 992px) 	{}
+@media screen and (max-width: 768px) 	{
+	.gallery {
+		@include flex-row(wrap,center,center);
+	}
+}
+@media screen and (max-width: 568px) 	{}
+@media screen and (max-width: 414px) 	{}
+@media screen and (max-width: 375px) 	{}

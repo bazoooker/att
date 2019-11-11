@@ -1,0 +1,137 @@
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    z-index: 9999;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #40EBD6;
+}
+.preloader__center {
+    position: relative;
+    display: inline-block;
+    width: 86px;
+    height: 86px;
+    color: #fff;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    background: none;
+    text-transform: uppercase;
+    transition: 250ms;
+}
+.preloader__icon {
+    position: absolute;
+    display: block;
+    top: -12px;
+    left: 0px;
+    width: 83px;
+    height: 45px;
+    background-image: url(/img/icons/icon-raft_white.png);
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 450ms;
+    opacity: 1;
+    animation: made-by-icon 2s linear infinite;
+    transition: 450ms;
+}
+.preloader__water {
+    position: absolute;
+    top: 20px;
+    left: -6px;
+    width: 93px;
+    height: 40px;
+    overflow: hidden;
+    display: block;
+    opacity: 0.7;
+    transition: 450ms;
+    i {
+        position: absolute;
+        display: block;
+        width: 500px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-image: url(/img/bg/1-hero/sea.svg);
+        background-position: bottom center;
+        background-size: 62px;
+        background-repeat: repeat-x;
+         animation: made-by-water 20s linear infinite;
+    }
+}
+// .made-by.made-by_active {
+//     transform: translateY(-5px);
+//     .made-by__icon {
+//         display: block;
+//         opacity: 1;
+//         animation: made-by-icon 2s linear infinite;
+//         transition: 450ms;
+//     }
+//     .made-by__water {
+//         display: block;
+//         opacity: 0.5;
+//         transition: 450ms;
+//         i {
+//             animation: made-by-water 20s linear infinite;
+//         }
+//     }
+// }
+
+// @keyframes made-by-icon {
+//     0%      {
+//         transform: none;
+//     }
+//     10%      {
+//         transform: rotate(4deg) translateY(2px);
+//     }
+//     20%      {
+//         transform: rotate(10deg) translateY(5px);
+//     }
+//     30%      {
+//         transform: rotate(8deg) translateY(7px);
+//     }
+//     40%      {
+//         transform: rotate(6deg) translateY(8px);
+//     }
+//     50%      {
+//         transform: rotate(0deg) translateY(8px);
+//     }
+//     60%      {
+//         transform: rotate(-4deg) translateY(7px);
+//     }
+//     70%      {
+//         transform: rotate(-10deg) translateY(6px);
+//     }
+//     80%      {
+//         transform: rotate(-8deg) translateY(3px);
+//     }
+//     90%      {
+//         transform: rotate(-6deg) translateY(1px);
+//     }
+//     100%      {
+//         transform: rotate(0deg) translateY(0px);
+//     }
+
+// }
+
+// @keyframes made-by-water {
+//     0% {
+//         transform: none;
+
+//     }
+//     99% {
+//         transform: translateX(-500px);
+//     }
+//     100% {
+//         transform: none;
+//     }
+// }

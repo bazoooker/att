@@ -1,0 +1,50 @@
+
+// список ссылок
+// 	горизонтальный
+// 	вертикальный
+// 	с дропдауном
+
+.nav {
+	@include flex-row(nowrap,space-between,center);
+	width: 100%;
+	flex: 1 1 100%;
+	height: 100%;
+
+	&__link {
+		position: relative;
+		color: #fff;
+		text-decoration: none;
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E %3Cpath fill='none' stroke='rgba(255,255,255,0)' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+		background-position: bottom;
+		background-repeat: repeat-x;
+		background-size: 15px;
+		border-bottom: 0;
+		padding-bottom: .3em;
+		text-decoration: none;
+		// transition: 400ms;
+		&:hover {
+			text-decoration: none;
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='white' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+			background-position: bottom;
+			background-repeat: repeat-x;
+			background-size: 15px;
+			border-bottom: 0;
+			padding-bottom: .3em;
+			text-decoration: none;
+		}
+		&:hover::before {
+
+		}
+		&:visited {color: #fff;}
+	}
+}
+
+
+
+
+@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 992px) {}
+@media screen and (max-width: 768px) {}
+@media screen and (max-width: 568px) {}
+@media screen and (max-width: 413px) {}

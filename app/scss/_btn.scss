@@ -1,0 +1,167 @@
+
+.btn, input.btn,
+.btn:visited, input.btn:visited{
+	display: inline-block;
+	position: relative;	
+	overflow: hidden;
+	text-decoration: none !important;
+	font-weight: 600;
+	cursor: pointer !important;
+	line-height: 100%;
+	text-transform: uppercase;
+	text-align: center;
+	background: none;
+	// font-size: 16px !important;
+	transition: 300ms;
+	letter-spacing: 1px;
+
+	&:hover {
+		text-decoration: none;
+		cursor: pointer !important;
+	}
+
+	// &.disabled {
+	// 	background-color: lightgray !important;
+	// 	color: #333 !important;
+	// 	cursor: not-allowed !important;
+	// 	opacity: .85;
+	// 	border: 2px solid gray;
+	// 	&:hover {
+	// 		border: 2px solid #666;
+	// 		opacity: 1;
+	// 	}
+	// }
+}
+
+
+.btn_main, input.btn_main {
+	color: #fff;
+	background: linear-gradient(90deg, #F72220 2.72%, #F53829 100%);
+	box-shadow: 0px 0px 12px rgba(40, 71, 133, 0.4);
+	border-radius: 40px;
+	color: #fff;
+	// &:active,
+	// &:focus 	{ color: $black; background-color: #fff;}
+	// &:hover 	{ 
+	// 	background-color: #fff;
+	// 	border: 2px solid $black; 
+	// }
+	&:visited {color: #fff;}
+}
+
+.btn_call-icon {
+	position: relative;
+	padding-left: 100px !important;
+	&::before {
+		position: absolute;
+	    content: '';
+	    width: 40px;
+	    height: 40px;
+	    left: 37px;
+	    top: 50%;
+	    background: url(/img/icons/tel.svg);
+	    background-position: 50% 50%;
+	    background-size: contain;
+	    background-repeat: no-repeat;
+	    transform: translateY(-50%);
+	}
+
+}
+
+// .btn_secondary, input.btn_secondary {
+// 	background-color: #ededed;
+// 	color: #666;
+// 	transition: all $tr2;
+// 	font-size: 16px;
+// 	font-weight: 400;
+// 	text-transform: none;
+// 		border: 2px solid #ededed; 
+// 		cursor: pointer;
+// 	&:active,
+// 	&:visited 	{ color: #006eb3; }
+// 	&:hover 	{ 
+// 		background-color: #fff;
+// 		border-color: $gray2;
+// 	}
+// 	&:focus 	{}
+// }
+
+
+// .btn_outline {
+// 	background-color: #fff;
+// 	color: #000;
+// 	border: 2px solid #000;
+// 	background: none;
+// 	&:active,
+// 	&:visited,
+// 	&:focus 	{ color: #000 !important; background: none; }
+// 	&:hover 	{ background: none; background-color: #000 !important; color: #fff !important; }
+// 	&:focus 	{}
+// }
+
+.btn_size-xl {
+	@include font-kit(19px, 18px, 17px, 16px, 14px);
+	padding: 28px 55px;
+}
+
+.btn_size-l {
+	@include font-kit(16px, 16px, 15px, 15px, 14px);
+	padding: 18px 40px;
+}
+.btn_size-m {
+	@include font-kit(15px, 15px, 14px, 14px, 13px);
+	padding: 16px 36px;
+	// padding: $gutter/2.2 $gutter*1.5;
+}
+.btn_size-s {
+	@include font-kit(14px, 14px, 13px, 13px, 12px);
+	padding: 14px 32px;
+	// padding: $gutter/3.5 $gutter*1.25;
+}
+
+
+.btn-burger {
+	@include flex-row(wrap, center, center);
+	width: 60px;
+	flex: 0 0 60px;
+	max-width: 60px; /*IE*/
+	height: 60px;
+	margin: 0 0 0 0;
+	cursor: pointer;
+    transition: 200ms;
+    padding: 16px 16px;
+
+	background-color: transparent;
+}
+.btn-burger__bar {
+	width: 100%;
+    height: 2px;
+    margin-bottom: 0px;
+	background-color: #fff;
+    // transition: $tr;
+
+}
+
+
+@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 992px) {}
+@media screen and (max-width: 768px) {}
+@media screen and (max-width: 568px) {}
+@media screen and (max-width: 413px) {
+	.btn {width: 100%;}
+	.btn.btn_call-icon {
+		padding-left: 65px !important;
+		&::before {
+			left: 35px;
+			width: 25px;
+			height: 25px;
+		}
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.btn-burger {
+		display: none;
+	}
+}

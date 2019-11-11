@@ -1,0 +1,23 @@
+.socials {
+	@include flex-row(nowrap,center,center);
+}
+
+
+@media screen and (max-width: 1200px) 	{}
+@media screen and (max-width: 992px) 	{}
+@media screen and (max-width: 768px) 	{
+	.header {
+		.socials {
+			display: none;
+		}
+	}
+	.footer__links {
+		.socials {
+			@include flex-row(nowrap, flex-start, center);
+			margin: 0 0 0 -11px;
+		}
+	}
+}
+@media screen and (max-width: 568px) 	{}
+@media screen and (max-width: 414px) 	{}
+@media screen and (max-width: 375px) 	{}

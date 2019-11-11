@@ -1,0 +1,66 @@
+.map {
+	position: relative;
+	width: 100%;
+	height: 407px;
+	background-image: url(/img/bg/5-stats/map.png);
+	@include bg-contain;
+
+	&__pin {
+		position: absolute;
+		i {
+			display: block;
+			margin: 0 auto;
+			width: 45px;
+			height: 45px;
+			@include bg-contain;
+			background-image: url(/img/bg/5-stats/map-pin.svg);
+		}
+		span {
+			color: #EE4542;
+		}
+	}
+	&__pin_left {
+		top: 125px;
+		left: 100px;
+	}
+	&__pin_right {
+		bottom:30px;
+		right: 70px;
+	}
+	&__line {
+		position: absolute;
+		width: 62%;
+		height: 58%;
+		bottom: 9%;
+		left: 20%;
+	}
+	&__raft {
+		position: absolute;
+		top: 30%;
+		left: 20%;
+		width: 78px;
+		height: 44px;
+		background-image: url(/img/icons/raft-red.svg );
+		@include bg-contain;
+	}
+}
+
+
+@media screen and (max-width: 1200px) 	{
+	.map {
+		background-image: url(/img/bg/5-stats/map_mobile.png);
+
+		&__pin,
+		&__line,
+		&__raft {display: none;}
+	}
+}
+@media screen and (max-width: 992px) 	{}
+@media screen and (max-width: 768px) 	{
+	.map {
+		display: none;
+	}
+}
+@media screen and (max-width: 568px) 	{}
+@media screen and (max-width: 414px) 	{}
+@media screen and (max-width: 375px) 	{}
