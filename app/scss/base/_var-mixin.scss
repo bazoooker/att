@@ -1,11 +1,21 @@
 
-// blue
-$color_main: #02CBF8; 
-$color_black: #020202;
-$color_gray: #47626a;
+// colors
+$red: #D62C4B; 
+$yellow: #EDCB18;
+$black: #393939;
+$blue: #0167CC;
+
+// fonts
+$font-main: 'Neucha', cursive;
+$font-sec: 'Montserrat Alternates', sans-serif;
 
 
 
+
+
+
+
+// mixins
 @mixin flex-col($wrap, $jusify-content, $align-items) {
     display: flex;
     flex-flow: column $wrap;
@@ -36,16 +46,6 @@ $color_gray: #47626a;
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-@mixin gr-red {
-    background: linear-gradient(90deg, #ED4343 0%, #F45933 100%);
-}
-@mixin gr-blue {
-    background: linear-gradient(90deg, #3694FE 0%, #3DD4E1 100%);
-}
-@mixin gr-green {
-    background: linear-gradient(90deg, #C1F6D7 0%, #EDF4D6 100%);
 }
 
 @mixin center {
