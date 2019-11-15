@@ -78,7 +78,7 @@ function reloadgallery(){
 
 $(document).ready(function(){
 
-    // tour-thumb hovers
+    // tour-thumb hovers ----------
     $('.js-tour-thumb').mouseenter(function() {
         var self = $(this);
         self.addClass('active');
@@ -89,7 +89,21 @@ $(document).ready(function(){
     });
 
 
-    // about us slider main
+    // tour-thumb hovers ----------
+    $('.js-news-thumb').mouseenter(function() {
+        var self = $(this);
+        self.addClass('active');
+    });
+    $('.js-news-thumb').mouseleave(function() {
+        var self = $(this);
+        self.removeClass('active');
+    });
+
+
+
+
+
+    // about us slider main --------
     var swiperDoubleMain = new Swiper('.js-double-slider-main', {
       slidesPerView: 1,
       speed: 800,
@@ -110,17 +124,48 @@ $(document).ready(function(){
         },
     });
 
+    // about us slider second --------
     var swiperDoubleSecond = new Swiper('.js-double-slider-second', {
-      slidesPerView: 1,
-      initialSlide: 1,
-      effect: "fade",
-      speed: 1200,
+        slidesPerView: 1,
+        initialSlide: 1,
+        effect: "fade",
+        speed: 1200,
+        keyboardControl: false,
+        mousewheelControl: false,
     });
 
 
-    // about us slider secondary
+
+    // reviews user-thumbs slider --------
+    var swiperReviewsThumbs = new Swiper('.js-reviews-thumbs', {
+        slidesPerView: 4,
+        spaceBetween: 16,
+    });
+    
+    // reviews text slider --------
+    var swiperReviewsText = new Swiper('.js-reviews-text', {
+        slidesPerView: 1,
+    });
+
+    // reviews text slider --------
+    var swiperReviewsZoom = new Swiper('.js-review-zoom', {
+        slidesPerView: 1,
+        effect: 'fade',
+    });
 
 
+
+    $('.js-review-sync').click(function() {
+
+        var clickedSlide = $('.js-review-sync').index(this);
+        swiperReviewsText.slideTo(clickedSlide);
+        swiperReviewsZoom.slideTo(clickedSlide);
+        swiperReviewsThumbs.slideTo(clickedSlide);
+
+        console.log(clickedSlide);
+    });
+
+    
 
 
 

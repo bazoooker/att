@@ -677,6 +677,18 @@ html {
 *, ::after, ::before {
   box-sizing: inherit; }
 
+.row.big-gutters .container {
+  padding-right: 27px;
+  padding-left: 27px; }
+
+.row.big-gutters .row {
+  margin-right: -27px;
+  margin-left: -27px; }
+
+.row.big-gutters .col, .row.big-gutters .col-1, .row.big-gutters .col-10, .row.big-gutters .col-11, .row.big-gutters .col-12, .row.big-gutters .col-2, .row.big-gutters .col-3, .row.big-gutters .col-4, .row.big-gutters .col-5, .row.big-gutters .col-6, .row.big-gutters .col-7, .row.big-gutters .col-8, .row.big-gutters .col-9, .row.big-gutters .col-auto, .row.big-gutters .col-lg, .row.big-gutters .col-lg-1, .row.big-gutters .col-lg-10, .row.big-gutters .col-lg-11, .row.big-gutters .col-lg-12, .row.big-gutters .col-lg-2, .row.big-gutters .col-lg-3, .row.big-gutters .col-lg-4, .row.big-gutters .col-lg-5, .row.big-gutters .col-lg-6, .row.big-gutters .col-lg-7, .row.big-gutters .col-lg-8, .row.big-gutters .col-lg-9, .row.big-gutters .col-lg-auto, .row.big-gutters .col-md, .row.big-gutters .col-md-1, .row.big-gutters .col-md-10, .row.big-gutters .col-md-11, .row.big-gutters .col-md-12, .row.big-gutters .col-md-2, .row.big-gutters .col-md-3, .row.big-gutters .col-md-4, .row.big-gutters .col-md-5, .row.big-gutters .col-md-6, .row.big-gutters .col-md-7, .row.big-gutters .col-md-8, .row.big-gutters .col-md-9, .row.big-gutters .col-md-auto, .row.big-gutters .col-sm, .row.big-gutters .col-sm-1, .row.big-gutters .col-sm-10, .row.big-gutters .col-sm-11, .row.big-gutters .col-sm-12, .row.big-gutters .col-sm-2, .row.big-gutters .col-sm-3, .row.big-gutters .col-sm-4, .row.big-gutters .col-sm-5, .row.big-gutters .col-sm-6, .row.big-gutters .col-sm-7, .row.big-gutters .col-sm-8, .row.big-gutters .col-sm-9, .row.big-gutters .col-sm-auto, .row.big-gutters .col-xl, .row.big-gutters .col-xl-1, .row.big-gutters .col-xl-10, .row.big-gutters .col-xl-11, .row.big-gutters .col-xl-12, .row.big-gutters .col-xl-2, .row.big-gutters .col-xl-3, .row.big-gutters .col-xl-4, .row.big-gutters .col-xl-5, .row.big-gutters .col-xl-6, .row.big-gutters .col-xl-7, .row.big-gutters .col-xl-8, .row.big-gutters .col-xl-9, .row.big-gutters .col-xl-auto {
+  padding-right: 27px;
+  padding-left: 27px; }
+
 .container {
   width: 100%;
   padding-right: 8px;
@@ -5930,6 +5942,9 @@ html.lb-disable-scrolling {
   .signup-form {
     margin: 0 -8px 0 -8px; } }
 
+.wrapper {
+  overflow: hidden; }
+
 .btn,
 .btn:visited {
   display: inline-block;
@@ -6280,6 +6295,8 @@ html.lb-disable-scrolling {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 8px; }
+  .photo.height-400 {
+    height: 400px; }
 
 .double-slider-container {
   position: relative; }
@@ -6287,9 +6304,220 @@ html.lb-disable-scrolling {
 .double-slider-second {
   position: absolute;
   width: 35%;
-  height: 100%;
+  height: 130%;
   left: 0;
-  top: 0;
+  top: -20%;
   opacity: .4; }
+  .double-slider-second .fog-slide {
+    position: relative; }
+    .double-slider-second .fog-slide .fog-top {
+      position: absolute;
+      background-image: url(/img/bg/bg-fog_bottom.png);
+      background-position: bottom left;
+      background-size: contain;
+      background-repeat: repeat-x;
+      width: 250%;
+      height: 250px;
+      top: 0;
+      left: 0;
+      transform: rotate(180deg); }
+    .double-slider-second .fog-slide .fog-right {
+      position: absolute;
+      background-image: url(/img/bg/bg-fog_right.png);
+      background-size: contain;
+      background-repeat: repeat-y;
+      width: 250px;
+      height: 250%;
+      top: 0;
+      right: 0;
+      background-position: bottom right; }
+    .double-slider-second .fog-slide .fog-bottom {
+      position: absolute;
+      background-image: url(/img/bg/bg-fog_bottom.png);
+      background-size: contain;
+      background-repeat: repeat-x;
+      width: 250%;
+      height: 250px;
+      bottom: 0;
+      left: 0;
+      background-position: bottom left; }
   .double-slider-second .photo {
     height: 100%; }
+
+.news-thumb {
+  position: relative;
+  overflow: hidden !important;
+  border-radius: 8px;
+  padding: 35px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  text-decoration: none; }
+  .news-thumb.big {
+    height: 500px; }
+  .news-thumb.small {
+    height: 242px;
+    margin-bottom: 16px; }
+    .news-thumb.small:last-child {
+      margin-bottom: 0; }
+  .news-thumb .news-thumb-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+    transition: 300ms; }
+  .news-thumb .news-thumb-icon {
+    display: inline-block;
+    margin: 0 5px 0 0;
+    vertical-align: middle; }
+  .news-thumb::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transition: 300ms; }
+  .news-thumb.active.big::before {
+    opacity: 1; }
+  .news-thumb.active.big .news-thumb-bg {
+    filter: blur(5px);
+    transform: scale(1.1); }
+  .news-thumb.active.big .news-thumb-caption {
+    transform: translateY(-250px); }
+  .news-thumb.active.big .news-thumb-more {
+    transform: translateY(40%);
+    opacity: 1;
+    transition-delay: 100ms; }
+  .news-thumb.active.small::before {
+    opacity: 1; }
+  .news-thumb.active.small .news-thumb-bg {
+    filter: blur(5px);
+    transform: scale(1.1); }
+  .news-thumb.active.small .news-thumb-caption {
+    transform: translateY(-80px); }
+  .news-thumb.active.small .news-thumb-more {
+    transform: translateY(45%);
+    opacity: 1;
+    transition-delay: 100ms; }
+  .news-thumb .news-thumb-caption {
+    display: inline-block;
+    line-height: 1.2;
+    width: 100%;
+    transition: 300ms;
+    z-index: 3; }
+  .news-thumb .news-thumb-name {
+    font-size: 22px;
+    line-height: 1.2;
+    display: inline-block;
+    width: 100%;
+    font-weight: 700;
+    transition: 300ms;
+    z-index: 3; }
+    @media screen and (max-width: 1200px) {
+      .news-thumb .news-thumb-name {
+        font-size: 21px; } }
+    @media screen and (max-width: 992px) {
+      .news-thumb .news-thumb-name {
+        font-size: 20px; } }
+    @media screen and (max-width: 768px) {
+      .news-thumb .news-thumb-name {
+        font-size: 20px; } }
+    @media screen and (max-width: 568px) {
+      .news-thumb .news-thumb-name {
+        font-size: 19px; } }
+  .news-thumb .news-thumb-date {
+    display: inline-block;
+    width: 100%;
+    font-weight: 400; }
+  .news-thumb .news-thumb-more {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 35px;
+    transition: 300ms;
+    transform: translateY(100%);
+    opacity: 0;
+    z-index: 3; }
+    .news-thumb .news-thumb-more p {
+      font-weight: 400;
+      line-height: 1.3; }
+
+.user-thumb {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border-radius: 7px;
+  z-index: 1;
+  border-radius: 7px;
+  overflow: hidden; }
+  .user-thumb .user-photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat; }
+    .user-thumb .user-photo::before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.35); }
+  .user-thumb .user-name {
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    bottom: 15px;
+    left: 0%;
+    font-size: 18px;
+    z-index: 2; }
+    @media screen and (max-width: 1200px) {
+      .user-thumb .user-name {
+        font-size: 18px; } }
+    @media screen and (max-width: 992px) {
+      .user-thumb .user-name {
+        font-size: 17px; } }
+    @media screen and (max-width: 768px) {
+      .user-thumb .user-name {
+        font-size: 16px; } }
+    @media screen and (max-width: 568px) {
+      .user-thumb .user-name {
+        font-size: 15px; } }
+
+.swiper-reviews-text .review-text-holder {
+  position: relative;
+  overflow: hidden;
+  height: 210px; }
+  .swiper-reviews-text .review-text-holder::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    background-image: url(/img/bg/bg-fog_bottom.png);
+    background-size: contain;
+    background-position: bottom left;
+    background-repeat: repeat-x;
+    z-index: 2;
+    pointer-events: none; }
+
+.swiper-reviews-thumbs {
+  width: 180%; }
