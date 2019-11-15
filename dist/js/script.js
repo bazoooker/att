@@ -77,6 +77,81 @@ function reloadgallery(){
 };
 
 $(document).ready(function(){
+
+    // tour-thumb hovers
+    $('.js-tour-thumb').mouseenter(function() {
+        var self = $(this);
+        self.addClass('active');
+    });
+    $('.js-tour-thumb').mouseleave(function() {
+        var self = $(this);
+        self.removeClass('active');
+    });
+
+
+    // about us slider main
+    var swiperDoubleMain = new Swiper('.js-double-slider-main', {
+      slidesPerView: 1,
+      speed: 800,
+      effect: "fade",
+      pagination: {
+            el: '.js-double-slider-main .swiper-pagination',
+        },
+        on: {
+            slideChange: function () {
+                var curActiveIndex = swiperDoubleMain.activeIndex;
+                // console.log(curActiveIndex);
+                if(!swiperDoubleSecond.isEnd) {
+                    swiperDoubleSecond.slideTo((curActiveIndex+1), 1200);
+                } else {
+                    swiperDoubleSecond.slideTo(0, 1200)
+                }
+            },
+        },
+    });
+
+    var swiperDoubleSecond = new Swiper('.js-double-slider-second', {
+      slidesPerView: 1,
+      initialSlide: 1,
+      effect: "fade",
+      speed: 1200,
+    });
+
+
+    // about us slider secondary
+
+
+
+
+
+
+    // form labels----------------------------
+
+    // remove floating if user
+    $('.js-floating-label').each(function() {
+        if($(this).val()!=""){
+            $(this).parent().find('.signup-form-floating-placeholder').addClass('float');
+        }
+    });
+
+    // floating on focus
+    $('.js-floating-label').blur();
+    $('.js-floating-label').on('focus', function() {
+        $(this).parent().find('.signup-form-floating-placeholder').addClass('float');
+    });
+    $('.js-floating-label').on('blur', function() {
+        if($(this).val()!=""){} else {
+            $(this).parent().find('.signup-form-floating-placeholder').removeClass('float');
+        };
+    });
+
+
+
+
+
+
+
+
         $('.js-read-more').click(function(e) {
             e.preventDefault();
             if( !$(this).hasClass('read-more__link_active') ) {
@@ -110,8 +185,8 @@ $(document).ready(function(){
 
 
 
-    new WOW().init();
-    $.stellar();
+    // new WOW().init();
+    // $.stellar();
     $('.js-mask-tel').mask('+7 (999) 999-99-99', {placeholder:"_"});
 
     // --------------------
@@ -155,34 +230,34 @@ $(document).ready(function(){
 
 
 
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Маршруты на моторных лодках', 6874],
-          ['Доставка ГЭС-Патмос и обратно', 7129],
-          ['Маршрут четыре порога', 507],
-          ['Маршрут два порога', 1683],
-          ['Прогулочные маршруты', 2008]
-        ]);
+      // google.charts.load("current", {packages:["corechart"]});
+      // google.charts.setOnLoadCallback(drawChart);
+      // function drawChart() {
+      //   var data = google.visualization.arrayToDataTable([
+      //     ['Task', 'Hours per Day'],
+      //     ['Маршруты на моторных лодках', 6874],
+      //     ['Доставка ГЭС-Патмос и обратно', 7129],
+      //     ['Маршрут четыре порога', 507],
+      //     ['Маршрут два порога', 1683],
+      //     ['Прогулочные маршруты', 2008]
+      //   ]);
 
-        var options = {
-          pieHole: 0.6,
-          legend: 'none',
-          backgroundColor: 'none',
-          slices: {
-            0: { color: 'FF984E' },
-            1: { color: 'CBDC80' },
-            2: { color: 'FFBD5A' },
-            3: { color: '35E0AD' },
-            4: { color: 'FC564B' }
-          }
-        };
+      //   var options = {
+      //     pieHole: 0.6,
+      //     legend: 'none',
+      //     backgroundColor: 'none',
+      //     slices: {
+      //       0: { color: 'FF984E' },
+      //       1: { color: 'CBDC80' },
+      //       2: { color: 'FFBD5A' },
+      //       3: { color: '35E0AD' },
+      //       4: { color: 'FC564B' }
+      //     }
+      //   };
 
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-      }
+      //   var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+      //   chart.draw(data, options);
+      // }
 
 
 
@@ -414,24 +489,24 @@ $(document).ready(function(){
 
 
 
-    var swiperFeedback = new Swiper('.js-feedback-slider', {
-      slidesPerView: 3,
-      spaceBetween: 20,
-      navigation: {
-        nextEl: '.feedback-slider__nav .swiper-button-next',
-        prevEl: '.feedback-slider__nav .swiper-button-prev',
-      },
-      breakpoints: {
-        992: {
-          slidesPerView: 2,
-          spaceBetween: 30
-        },
-        768: {
-          slidesPerView: 1,
-          spaceBetween: 20
-        }
-      }
-    });
+    // var swiperFeedback = new Swiper('.js-feedback-slider', {
+    //   slidesPerView: 3,
+    //   spaceBetween: 20,
+    //   navigation: {
+    //     nextEl: '.feedback-slider__nav .swiper-button-next',
+    //     prevEl: '.feedback-slider__nav .swiper-button-prev',
+    //   },
+    //   breakpoints: {
+    //     992: {
+    //       slidesPerView: 2,
+    //       spaceBetween: 30
+    //     },
+    //     768: {
+    //       slidesPerView: 1,
+    //       spaceBetween: 20
+    //     }
+    //   }
+    // });
 
     // var swiper = new Swiper('.js-slider-gallery', {
     //   slidesPerView: 5,
