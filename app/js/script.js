@@ -12,81 +12,81 @@ $(window).load(function(){
 
 $(window).scroll(function() {
 
-    $('.js-trigger-boat').each(function() {
-        if( $(this).visible(true) ) {
-            if(!$('.js-trigger-boat').hasClass('triggered')) {
-                $('.js-trigger-boat').addClass('triggered');
-                var pathBoatWave = anime.path('#pathForFloatingBoat path');
-                console.log('trigger!');
-                anime({
-                    targets: '.js-raft-float',
-                    translateX: pathBoatWave('x'),
-                    translateY: pathBoatWave('y'),
-                    rotate: pathBoatWave('angle'),
-                    easing: 'linear',
-                    duration: 10000,
-                    begin: function(anim) {
-                        console.log('anim begin');
-                    },
-                    complete: function(anim) {
-                        $('.js-trigger-boat').removeClass('triggered');
-                    }
-                }) 
-            }
-        }        
-    });
+    // $('.js-trigger-boat').each(function() {
+    //     if( $(this).visible(true) ) {
+    //         if(!$('.js-trigger-boat').hasClass('triggered')) {
+    //             $('.js-trigger-boat').addClass('triggered');
+    //             var pathBoatWave = anime.path('#pathForFloatingBoat path');
+    //             console.log('trigger!');
+    //             anime({
+    //                 targets: '.js-raft-float',
+    //                 translateX: pathBoatWave('x'),
+    //                 translateY: pathBoatWave('y'),
+    //                 rotate: pathBoatWave('angle'),
+    //                 easing: 'linear',
+    //                 duration: 10000,
+    //                 begin: function(anim) {
+    //                     console.log('anim begin');
+    //                 },
+    //                 complete: function(anim) {
+    //                     $('.js-trigger-boat').removeClass('triggered');
+    //                 }
+    //             }) 
+    //         }
+    //     }        
+    // });
 
 
-    $('.js-trigger-boat-on-map').each(function() {
-        if( $(this).visible(true) ) {
-            if(!$('.js-trigger-boat-on-map').hasClass('triggered')) {
-                $('.js-trigger-boat-on-map').addClass('triggered');
-                var pathBoatMap = anime.path('#pathForMapBoat path');
-                console.log('trigger!');
-                anime({
-                    targets: '.js-raft-on-map',
-                    translateX: pathBoatMap('x'),
-                    translateY: pathBoatMap('y'),
-                    rotate: pathBoatMap('angle'),
-                    easing: 'linear',
-                    duration: 6000,
-                    begin: function(anim) {
-                        console.log('anim begin');
-                    },
-                    complete: function(anim) {
-                        $('.js-move-boat-on-map').removeClass('triggered');
-                    }
-                }) 
-            }
-        }        
-    });
+    // $('.js-trigger-boat-on-map').each(function() {
+    //     if( $(this).visible(true) ) {
+    //         if(!$('.js-trigger-boat-on-map').hasClass('triggered')) {
+    //             $('.js-trigger-boat-on-map').addClass('triggered');
+    //             var pathBoatMap = anime.path('#pathForMapBoat path');
+    //             console.log('trigger!');
+    //             anime({
+    //                 targets: '.js-raft-on-map',
+    //                 translateX: pathBoatMap('x'),
+    //                 translateY: pathBoatMap('y'),
+    //                 rotate: pathBoatMap('angle'),
+    //                 easing: 'linear',
+    //                 duration: 6000,
+    //                 begin: function(anim) {
+    //                     console.log('anim begin');
+    //                 },
+    //                 complete: function(anim) {
+    //                     $('.js-move-boat-on-map').removeClass('triggered');
+    //                 }
+    //             }) 
+    //         }
+    //     }        
+    // });
 
 });
 
-var getNewPhotos = function(){
-    $(".gallerycontainer").load( "/ajax/gallery.php", function() {
-        setTimeout( function() {
-            $('#gallery').removeClass('reload');
-        },1500);
-    });
-};
+// var getNewPhotos = function(){
+//     $(".gallerycontainer").load( "/ajax/gallery.php", function() {
+//         setTimeout( function() {
+//             $('#gallery').removeClass('reload');
+//         },1500);
+//     });
+// };
 
-function reloadgallery(){
-    $('#gallery').addClass('reload');
-        setTimeout(getNewPhotos,600);
-};
+// function reloadgallery(){
+//     $('#gallery').addClass('reload');
+//         setTimeout(getNewPhotos,600);
+// };
 
 $(document).ready(function(){
-        $('.js-read-more').click(function(e) {
-            e.preventDefault();
-            if( !$(this).hasClass('read-more__link_active') ) {
-                $(this).addClass('read-more__link_active');
-                $(this).next().slideDown(300);
-            }else {
-                $(this).removeClass('read-more__link_active');
-                $(this).next().slideUp(300);
-            }
-        });
+        // $('.js-read-more').click(function(e) {
+        //     e.preventDefault();
+        //     if( !$(this).hasClass('read-more__link_active') ) {
+        //         $(this).addClass('read-more__link_active');
+        //         $(this).next().slideDown(300);
+        //     }else {
+        //         $(this).removeClass('read-more__link_active');
+        //         $(this).next().slideUp(300);
+        //     }
+        // });
 
 
 
@@ -98,26 +98,27 @@ $(document).ready(function(){
         }, 800);
     });
 
-    $(".js-scroll-to-section-from-menu").click(function(event) {
-        event.preventDefault();
-        $('#mobile-menu').removeClass('active');
-        $('.page-wrapper').removeClass('no-scroll');
-        var targetSection = $(this).attr("data-scrollTo");
-        $('html, body').animate({
-            scrollTop: $("#"+targetSection).offset().top -150
-        }, 800);
-    });
+    // $(".js-scroll-to-section-from-menu").click(function(event) {
+    //     event.preventDefault();
+    //     $('#mobile-menu').removeClass('active');
+    //     $('.page-wrapper').removeClass('no-scroll');
+    //     var targetSection = $(this).attr("data-scrollTo");
+    //     $('html, body').animate({
+    //         scrollTop: $("#"+targetSection).offset().top -150
+    //     }, 800);
+    // });
 
 
 
     new WOW().init();
-    $.stellar();
+    // $.stellar();
+
     $('.js-mask-tel').mask('+7 (999) 999-99-99', {placeholder:"_"});
 
     // --------------------
     // анимация фигур
 
-    $('.js-animate-shape-on-hover').mouseenter(function() {
+    // $('.js-animate-shape-on-hover').mouseenter(function() {
 
         // !!! 
         // чтобы схема работала, нужно:
@@ -125,120 +126,32 @@ $(document).ready(function(){
         // 2. присводить ему дата-таргет, идентичный id svg-фигуры внути
         // 3. присвоить svg-фигуре ай-ди
 
-        var animTarget = $(this).data('target');
-        var pathFrom = $(this).find('path.path-1').attr('d');
-        var pathTo = $(this).find('path.path-2').attr('d');
+        // var animTarget = $(this).data('target');
+        // var pathFrom = $(this).find('path.path-1').attr('d');
+        // var pathTo = $(this).find('path.path-2').attr('d');
 
-        anime({
-            targets: "#"+animTarget,
-            d: [
-                { value: pathFrom },
-                { value: pathTo },
-                { value: pathFrom },
-            ],
-            easing: 'easeOutQuad',
-            duration: 5000,
-        });
-    });
-
-    // --------------------
-
-
-
-    $('.js-made-by-anim').on('mouseenter', function() {
-        $(this).addClass('made-by_active');
-    });
-    $('.js-made-by-anim').on('mouseleave', function() {
-        $(this).removeClass('made-by_active');
-    })
-
-
-
-
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Маршруты на моторных лодках', 6874],
-          ['Доставка ГЭС-Патмос и обратно', 7129],
-          ['Маршрут четыре порога', 507],
-          ['Маршрут два порога', 1683],
-          ['Прогулочные маршруты', 2008]
-        ]);
-
-        var options = {
-          pieHole: 0.6,
-          legend: 'none',
-          backgroundColor: 'none',
-          slices: {
-            0: { color: 'FF984E' },
-            1: { color: 'CBDC80' },
-            2: { color: 'FFBD5A' },
-            3: { color: '35E0AD' },
-            4: { color: 'FC564B' }
-          }
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-      }
-
-
-
-
-
-
-    // --------------------
-    // анимация лодки
-
-
-    // анимация лодки мск-хабаровск
-    var pathBoat = anime.path('#my-path path');
-
-    // !!! важно
-    // уменьшить дистанци, т.к. лодка заплывает за пин
-
-    $('#anime-boat').click(function() {
-        anime({
-          targets: '.js-raft-total-distance',
-          translateX: pathBoat('x'),
-          translateY: pathBoat('y'),
-          rotate: pathBoat('angle'),
-          easing: 'linear',
-          duration: 6000,
-          begin: function(anim) {
-            console.log('anim begin');
-          },
-          complete: function(anim) {
-            console.log('anim end');
-          }
-        });
-    })
-
-
-
-    // анимация лодки по большой волне
-    var pathBoatWave = anime.path('#pathForFloatingBoat path');
-
-    // $('#big-anime-boat').click(function() {
-        anime({
-          targets: '.js-raft-float',
-          translateX: pathBoatWave('x'),
-          translateY: pathBoatWave('y'),
-          rotate: pathBoatWave('angle'),
-          easing: 'linear',
-          duration: 6000,
-          begin: function(anim) {
-            console.log('anim begin');
-          },
-          complete: function(anim) {
-            console.log('anim end');
-          }
+        // anime({
+        //     targets: "#"+animTarget,
+        //     d: [
+        //         { value: pathFrom },
+        //         { value: pathTo },
+        //         { value: pathFrom },
+        //     ],
+        //     easing: 'easeOutQuad',
+        //     duration: 5000,
         // });
-    })
+    });
+
     // --------------------
 
+
+
+    // $('.js-made-by-anim').on('mouseenter', function() {
+    //     $(this).addClass('made-by_active');
+    // });
+    // $('.js-made-by-anim').on('mouseleave', function() {
+    //     $(this).removeClass('made-by_active');
+    // })
 
 
 
@@ -283,100 +196,21 @@ $(document).ready(function(){
 
 
 
-    // --------------------
-    // табы
-
-    // нажатие на табы
-    $('.js-tab-link').click(function() {
-        var targetTab = $(this).data('target');
-        var allSlidesInParent = $(this).parent().parent().find('.tab-slide');
-        var slideToShow = $(allSlidesInParent).eq(targetTab-1);
-
-        // цвета табов
-        $(this).parent().find('.tab-link_active').removeClass('tab-link_active');
-        $(this).addClass('tab-link_active');
-
-        // поялвение контента
-        $(allSlidesInParent).addClass('tab-slide_hidden');
-        $(slideToShow).removeClass('tab-slide_hidden');
-    });
-
-
-    // нажатие на стрелки
-    // листание табов вперед
-    $('.js-tabs-nav-next').click(function() {
-        let tabsTarget = $(this).data('tabs-target');
-        let currentActiveTab = $('#'+tabsTarget).find('.tab-link_active').index();
-
-        if(currentActiveTab > 1) { //переход с третьего таба на первый
-            // цвета табов
-            $('#'+tabsTarget).find('.tab-link').eq(0).addClass('tab-link_active');
-            $('#'+tabsTarget).find('.tab-link').eq(currentActiveTab).removeClass('tab-link_active');
-
-
-            // появление контента
-           var allSlidesInParent = $('#'+tabsTarget).find('.tab-slide');
-           var slideToShow = $('#'+tabsTarget).find('.tab-slide').eq(0);
-           $(allSlidesInParent).addClass('tab-slide_hidden');
-           $(slideToShow).removeClass('tab-slide_hidden');
-
-        } else {
-            // цвета табов
-            $('#'+tabsTarget).find('.tab-link').eq(currentActiveTab+1).addClass('tab-link_active');
-            $('#'+tabsTarget).find('.tab-link').eq(currentActiveTab).removeClass('tab-link_active');
-            // появление контента
-            var allSlidesInParent = $('#'+tabsTarget).find('.tab-slide');
-            var slideToShow = $('#'+tabsTarget).find('.tab-slide').eq(currentActiveTab+1);
-            $(allSlidesInParent).addClass('tab-slide_hidden');
-            $(slideToShow).removeClass('tab-slide_hidden');
-        }
-    });
 
 
 
 
 
-    $('.js-tabs-nav-prev').click(function() {
-        let tabsTarget = $(this).data('tabs-target');
-        let currentActiveTab = $('#'+tabsTarget).find('.tab-link_active').index();
-
-        console.log(currentActiveTab);
-        if(currentActiveTab < 1) {
-            // цвета табов
-            $('#'+tabsTarget).find('.tab-link').eq(2).addClass('tab-link_active');
-            $('#'+tabsTarget).find('.tab-link').eq(currentActiveTab).removeClass('tab-link_active');
-
-            // появление контента
-            var allSlidesInParent = $('#'+tabsTarget).find('.tab-slide');
-            var slideToShow = $('#'+tabsTarget).find('.tab-slide').eq(currentActiveTab+2);
-            $(allSlidesInParent).addClass('tab-slide_hidden');
-            $(slideToShow).removeClass('tab-slide_hidden');
-        } else {
-            // цвета табов
-            $('#'+tabsTarget).find('.tab-link').eq(currentActiveTab-1).addClass('tab-link_active');
-            $('#'+tabsTarget).find('.tab-link').eq(currentActiveTab).removeClass('tab-link_active');
-
-            // появление контента
-            var allSlidesInParent = $('#'+tabsTarget).find('.tab-slide');
-            var slideToShow = $('#'+tabsTarget).find('.tab-slide').eq(currentActiveTab-1);
-            $(allSlidesInParent).addClass('tab-slide_hidden');
-            $(slideToShow).removeClass('tab-slide_hidden');
-        }
-    });
-    // --------------------
 
 
-
-
-
-    $('.js-hero-slider-controls').click(function() {
-        let heroSlideTo = $(this).data('slideto');        
-        $('.js-hero-slider-controls').removeClass('bullets__dot_active');
-        $(this).addClass('bullets__dot_active');
-        swiperHero.slideTo(heroSlideTo, 200);        
-        $('.hero__text-slide').hide();
-        $('.hero__text-slide#text-slide-'+heroSlideTo).show();
-    });
+    // $('.js-hero-slider-controls').click(function() {
+    //     let heroSlideTo = $(this).data('slideto');        
+    //     $('.js-hero-slider-controls').removeClass('bullets__dot_active');
+    //     $(this).addClass('bullets__dot_active');
+    //     swiperHero.slideTo(heroSlideTo, 200);        
+    //     $('.hero__text-slide').hide();
+    //     $('.hero__text-slide#text-slide-'+heroSlideTo).show();
+    // });
 
 
 
@@ -474,25 +308,9 @@ $(document).ready(function(){
     // --------------------------
     // КРАСИВЫЕ СЕЛЕКТЫ
 
-    // $('select').niceSelect();
+   
     // --------------------------
 
-
-
-
-
-
-    // --------------------------
-    // СКРОЛЛ ДО СЕКЦИИ
-
-
-    // $("#scrollToFeatures").click(function() {
-    //     $([document.documentElement, document.body]).animate({
-    //         scrollTop: $("#scrollToFeatures").offset().top
-    //     }, 600);
-    // });
-
-    //---------------------------
 
 
 
@@ -503,15 +321,15 @@ $(document).ready(function(){
     // ОТКРЫТИЕ-ЗАКРЫТИЕ МОБИЛЬНОГО МЕНЮ
 
 
-    $('.js-open-mobile-menu').on('click', function() {
-        if( !$('#mobile-menu').hasClass('active') ) {
-            $('#mobile-menu').addClass('active');
-            $('.page-wrapper').addClass('no-scroll');
-        } else {
-            $('#mobile-menu').removeClass('active');
-            $('.page-wrapper').removeClass('no-scroll');
-        }
-    });
+    // $('.js-open-mobile-menu').on('click', function() {
+    //     if( !$('#mobile-menu').hasClass('active') ) {
+    //         $('#mobile-menu').addClass('active');
+    //         $('.page-wrapper').addClass('no-scroll');
+    //     } else {
+    //         $('#mobile-menu').removeClass('active');
+    //         $('.page-wrapper').removeClass('no-scroll');
+    //     }
+    // });
 
     $(document).on( 'keydown', function ( e ) {
         if ( e.keyCode === 27 ) {
@@ -604,94 +422,98 @@ $(document).ready(function(){
 
 
 
-$('.js-show-signup-message-success').on('click', function(){
+// $('.js-show-signup-message-success').on('click', function(){
 
-	var form=$('.signup-form');
-        $(form).ajaxSubmit({  
-            url: "/ajax/"+$(form).data('file')+".php",
-            data: $(form).serialize(),
-            dataType: "JSON",
-            type: "POST",
-            success: function(data){
-                if(data.done) {
-			$('.js-show-signup-message-success').html('<i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;Отправлено!');
-			$('.signup-form').find('input[type=text]').val('');
-                } else {
-			$('.signup-form').find('.modal-errors').show();
-			$('.signup-form').find('.modal-errors').html(data.message);
-			setTimeout("$('.signup-form').find('.modal-errors').hide()",1000);
-                }
-            },
-            complete: function(){
-            }
-        });
-	return false;
-});
-$('.modal#callback .js-show-success-message').on('click', function(){
-
-	var form=$('.modal#callback form');
-        $(form).ajaxSubmit({  
-            url: "/ajax/"+$(form).data('file')+".php",
-            data: $(form).serialize(),
-            dataType: "JSON",
-            type: "POST",
-            success: function(data){
-                if(data.done) {
-			$('.modal#callback form').find('input[type=text]').val('');
-		        var timer;
-		            $('.message').addClass('message_visible');
-		            clearTimeout(timer);
+// 	var form=$('.signup-form');
+//         $(form).ajaxSubmit({  
+//             url: "/ajax/"+$(form).data('file')+".php",
+//             data: $(form).serialize(),
+//             dataType: "JSON",
+//             type: "POST",
+//             success: function(data){
+//                 if(data.done) {
+// 			$('.js-show-signup-message-success').html('<i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;Отправлено!');
+// 			$('.signup-form').find('input[type=text]').val('');
+//                 } else {
+// 			$('.signup-form').find('.modal-errors').show();
+// 			$('.signup-form').find('.modal-errors').html(data.message);
+// 			setTimeout("$('.signup-form').find('.modal-errors').hide()",1000);
+//                 }
+//             },
+//             complete: function(){
+//             }
+//         });
+// 	return false;
+// });
 
 
-		            timer = setTimeout( function() {
-	                $('.modal').removeClass('modal_active');
-	                $('.overlay_modal').fadeOut(400); 
-	            }, 2000);
+// $('.modal#callback .js-show-success-message').on('click', function(){
 
-                } else {
-			$('.modal#callback form').find('.modal-errors').show();
-			$('.modal#callback form').find('.modal-errors').html(data.message);
-			setTimeout("$('.modal#callback form').find('.modal-errors').hide()",1000);
-                }
-            },
-            complete: function(){
-            }
-        });
-	return false;
-});
-
-$('.modal#write .js-show-success-message').on('click', function(){
-
-	var form=$('.modal#write form');
-        $(form).ajaxSubmit({  
-            url: "/ajax/"+$(form).data('file')+".php",
-            data: $(form).serialize(),
-            dataType: "JSON",
-            type: "POST",
-            success: function(data){
-                if(data.done) {
-			$('.modal#write form').find('input[type=text]').val('');
-		        var timer;
-		            $('.message').addClass('message_visible');
-		            clearTimeout(timer);
+// 	var form=$('.modal#callback form');
+//         $(form).ajaxSubmit({  
+//             url: "/ajax/"+$(form).data('file')+".php",
+//             data: $(form).serialize(),
+//             dataType: "JSON",
+//             type: "POST",
+//             success: function(data){
+//                 if(data.done) {
+// 			$('.modal#callback form').find('input[type=text]').val('');
+// 		        var timer;
+// 		            $('.message').addClass('message_visible');
+// 		            clearTimeout(timer);
 
 
-		            timer = setTimeout( function() {
-	                $('.modal').removeClass('modal_active');
-	                $('.overlay_modal').fadeOut(400); 
-	            }, 2000);
+// 		            timer = setTimeout( function() {
+// 	                $('.modal').removeClass('modal_active');
+// 	                $('.overlay_modal').fadeOut(400); 
+// 	            }, 2000);
 
-                } else {
-			$('.modal#write form').find('.modal-errors').show();
-			$('.modal#write form').find('.modal-errors').html(data.message);
-			setTimeout("$('.modal#write form').find('.modal-errors').hide()",1000);
-                }
-            },
-            complete: function(){
-            }
-        });
-	return false;
-});
+//                 } else {
+// 			$('.modal#callback form').find('.modal-errors').show();
+// 			$('.modal#callback form').find('.modal-errors').html(data.message);
+// 			setTimeout("$('.modal#callback form').find('.modal-errors').hide()",1000);
+//                 }
+//             },
+//             complete: function(){
+//             }
+//         });
+// 	return false;
+// });
+
+
+
+// $('.modal#write .js-show-success-message').on('click', function(){
+
+// 	var form=$('.modal#write form');
+//         $(form).ajaxSubmit({  
+//             url: "/ajax/"+$(form).data('file')+".php",
+//             data: $(form).serialize(),
+//             dataType: "JSON",
+//             type: "POST",
+//             success: function(data){
+//                 if(data.done) {
+// 			$('.modal#write form').find('input[type=text]').val('');
+// 		        var timer;
+// 		            $('.message').addClass('message_visible');
+// 		            clearTimeout(timer);
+
+
+// 		            timer = setTimeout( function() {
+// 	                $('.modal').removeClass('modal_active');
+// 	                $('.overlay_modal').fadeOut(400); 
+// 	            }, 2000);
+
+//                 } else {
+// 			$('.modal#write form').find('.modal-errors').show();
+// 			$('.modal#write form').find('.modal-errors').html(data.message);
+// 			setTimeout("$('.modal#write form').find('.modal-errors').hide()",1000);
+//                 }
+//             },
+//             complete: function(){
+//             }
+//         });
+// 	return false;
+// });
 
  
     // ---------------------------
@@ -718,5 +540,203 @@ $('.modal#write .js-show-success-message').on('click', function(){
     // $('.js-scroll-to-top').click(scrollToTop);
     // $(window).scroll(showToTopButton);    
 
-});
+// });
 
+
+
+            /*  jQuery Nice Select - v1.1.0
+    https://github.com/hernansartorio/jquery-nice-select
+    Made by Hernán Sartorio  */
+ 
+(function($) {
+
+  $.fn.niceSelect = function(method) {
+    
+    // Methods
+    if (typeof method == 'string') {      
+      if (method == 'update') {
+        this.each(function() {
+          var $select = $(this);
+          var $dropdown = $(this).next('.nice-select');
+          var open = $dropdown.hasClass('open');
+          
+          if ($dropdown.length) {
+            $dropdown.remove();
+            create_nice_select($select);
+            
+            if (open) {
+              $select.next().trigger('click');
+            }
+          }
+        });
+      } else if (method == 'destroy') {
+        this.each(function() {
+          var $select = $(this);
+          var $dropdown = $(this).next('.nice-select');
+          
+          if ($dropdown.length) {
+            $dropdown.remove();
+            $select.css('display', '');
+          }
+        });
+        if ($('.nice-select').length == 0) {
+          $(document).off('.nice_select');
+        }
+      } else {
+        console.log('Method "' + method + '" does not exist.')
+      }
+      return this;
+    }
+      
+    // Hide native select
+    this.hide();
+    
+    // Create custom markup
+    this.each(function() {
+      var $select = $(this);
+      
+      if (!$select.next().hasClass('nice-select')) {
+        create_nice_select($select);
+      }
+    });
+    
+    function create_nice_select($select) {
+      $select.after($('<div></div>')
+        .addClass('nice-select')
+        .addClass($select.attr('class') || '')
+        .addClass($select.attr('disabled') ? 'disabled' : '')
+        .attr('tabindex', $select.attr('disabled') ? null : '0')
+        .html('<span class="current"></span><ul class="list"></ul>')
+      );
+        
+      var $dropdown = $select.next();
+      var $options = $select.find('option');
+      var $selected = $select.find('option:selected');
+      
+      $dropdown.find('.current').html($selected.data('display') || $selected.text());
+      
+      $options.each(function(i) {
+        var $option = $(this);
+        var display = $option.data('display');
+
+        $dropdown.find('ul').append($('<li></li>')
+          .attr('data-value', $option.val())
+          .attr('data-display', (display || null))
+          .addClass('option' +
+            ($option.is(':selected') ? ' selected' : '') +
+            ($option.is(':disabled') ? ' disabled' : ''))
+          .html($option.text())
+        );
+      });
+    }
+    
+    /* Event listeners */
+    
+    // Unbind existing events in case that the plugin has been initialized before
+    $(document).off('.nice_select');
+    
+    // Open/close
+    $(document).on('click.nice_select', '.nice-select', function(event) {
+      var $dropdown = $(this);
+      
+      $('.nice-select').not($dropdown).removeClass('open');
+      $dropdown.toggleClass('open');
+      
+      if ($dropdown.hasClass('open')) {
+        $dropdown.find('.option');  
+        $dropdown.find('.focus').removeClass('focus');
+        $dropdown.find('.selected').addClass('focus');
+      } else {
+        $dropdown.focus();
+      }
+    });
+    
+    // Close when clicking outside
+    $(document).on('click.nice_select', function(event) {
+      if ($(event.target).closest('.nice-select').length === 0) {
+        $('.nice-select').removeClass('open').find('.option');  
+      }
+    });
+    
+    // Option click
+    $(document).on('click.nice_select', '.nice-select .option:not(.disabled)', function(event) {
+      var $option = $(this);
+      var $dropdown = $option.closest('.nice-select');
+      
+      $dropdown.find('.selected').removeClass('selected');
+      $option.addClass('selected');
+      
+      var text = $option.data('display') || $option.text();
+      $dropdown.find('.current').text(text);
+      
+      $dropdown.prev('select').val($option.data('value')).trigger('change');
+    });
+
+    // Keyboard events
+    $(document).on('keydown.nice_select', '.nice-select', function(event) {    
+      var $dropdown = $(this);
+      var $focused_option = $($dropdown.find('.focus') || $dropdown.find('.list .option.selected'));
+      
+      // Space or Enter
+      if (event.keyCode == 32 || event.keyCode == 13) {
+        if ($dropdown.hasClass('open')) {
+          $focused_option.trigger('click');
+        } else {
+          $dropdown.trigger('click');
+        }
+        return false;
+      // Down
+      } else if (event.keyCode == 40) {
+        if (!$dropdown.hasClass('open')) {
+          $dropdown.trigger('click');
+        } else {
+          var $next = $focused_option.nextAll('.option:not(.disabled)').first();
+          if ($next.length > 0) {
+            $dropdown.find('.focus').removeClass('focus');
+            $next.addClass('focus');
+          }
+        }
+        return false;
+      // Up
+      } else if (event.keyCode == 38) {
+        if (!$dropdown.hasClass('open')) {
+          $dropdown.trigger('click');
+        } else {
+          var $prev = $focused_option.prevAll('.option:not(.disabled)').first();
+          if ($prev.length > 0) {
+            $dropdown.find('.focus').removeClass('focus');
+            $prev.addClass('focus');
+          }
+        }
+        return false;
+      // Esc
+      } else if (event.keyCode == 27) {
+        if ($dropdown.hasClass('open')) {
+          $dropdown.trigger('click');
+        }
+      // Tab
+      } else if (event.keyCode == 9) {
+        if ($dropdown.hasClass('open')) {
+          return false;
+        }
+      }
+    });
+
+    // Detect CSS pointer-events support, for IE <= 10. From Modernizr.
+    var style = document.createElement('a').style;
+    style.cssText = 'pointer-events:auto';
+    if (style.pointerEvents !== 'auto') {
+      $('html').addClass('no-csspointerevents');
+    }
+    
+    return this;
+
+  };
+
+}(jQuery));
+
+
+
+
+
+    $('select').niceSelect();

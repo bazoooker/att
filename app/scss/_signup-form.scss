@@ -18,6 +18,15 @@ $input-height: 42px;
 	// margin: 7px;
 	display: block;
 
+	&.error {
+		border: 1px solid #ffcaca !important;
+		background-color: #fff1f1 !important;
+	}
+	&.success {
+		border: 1px solid #3cbf3c !important;
+		background-color: #f3fff3 !important;
+	}
+
 	&.comment {
 		height: $input-height * 1.5;
 	}
@@ -33,6 +42,15 @@ $input-height: 42px;
 		padding: 0 20px 0 20px;
 		z-index: 2;
 		background-color: transparent;
+	}
+
+	.message-error {
+		display: none;
+		position: absolute;
+		bottom: -42%;
+		left: 20px;
+		color: red;
+		font-size: 11px;
 	}
 
 	// textarea {
@@ -67,7 +85,7 @@ $input-height: 42px;
 	font-size: 14px;
 
 	&.float {
-		transform: translateY(-$input-height * 0.8);
+		transform: translateY(-$input-height * 0.7);
 		font-size: 13px;
 		color: $black;
 		opacity: .65;

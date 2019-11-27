@@ -1,0 +1,41 @@
+.to-top {
+	position: fixed;
+	transform: translateX(220%);
+	right: 30px;
+	bottom: 30px;
+	padding-right: 2px;
+	width: 88px;
+	height: 88px;
+	cursor: pointer;
+	opacity: .75;
+	z-index: 9999;
+	transition: 300ms;
+	background-image: url(/img/icons/to-top.png);
+	@include bg-contain;
+	transition: 400ms;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.to-top_visible {
+	transform: none !important;
+}
+
+@media screen and (max-width: 992px) {
+	.to-top {
+		width: 70px;
+		height: 70px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.to-top {
+		bottom: 15px;
+		right: 15px;
+		width: 60px;
+		height: 60px;
+		opacity: 1 !important;
+	}
+}
+

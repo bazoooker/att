@@ -1,0 +1,103 @@
+@media screen and (max-width: 1500px) {
+	.bg-half {
+		.bg-holder {
+			position: absolute;
+			left: 40%;
+			top: -20%;
+			width: 90%;
+			height: 75vh;
+		}
+	}
+}
+@media screen and (max-width: 1300px) {
+	.logo-big {
+		width: 230px;
+		height: 133px;
+	}
+	.menu {
+		@include flex-row(wrap, center, center);
+		.menu-item {
+			flex: 1 1 32%;
+			text-align: center;
+			margin: 3px 0px;
+			.menu-item-hover {
+				opacity: .2;
+				transform: scale(0.97);
+			}
+		}
+	}
+
+	.socials {
+		.socials-item {
+			margin: 0 7px 0 0;
+		}
+	}
+
+	.bg-aquarel {
+		position: relative;
+		&::before {
+			@include pseudo;
+			top: -160px;
+		}
+	}
+}
+@media screen and (max-width: 1200px) {
+	.btn-md {
+		padding: 10px 22px;
+		border-radius: 25px;
+	}
+	h2 {
+		text-align: center;
+	}
+	.bg-half {
+		.bg-holder {
+			display: none;
+			position: absolute;
+			left: 40%;
+			top: -20%;
+			width: 60%;
+			height: 55vh;
+		}
+	}
+
+	.footer-top {
+		// z-index: 3;
+		// margin-left: -8px;
+		// margin-right: -8px;
+		@include flex-row(wrap,flex-start,flex-start);
+		// border-bottom: 1px solid rgba(255,255,255,.4);
+		& > p {
+			flex: 0 0 25%;
+			// padding-left: 8px;
+			padding-right: 10px;
+			br {display: none;}
+		}
+		.footer-soc {
+			flex: 0 0 30%;
+			// padding-left: 8px;
+			// padding-right: 8px;
+		}
+		.email-signup {
+			flex: 0 0 45%;
+			padding-left: 8px;
+			padding-right: 15px;
+			.signup-form {
+				@include flex-row(wrap,flex-start,flex-start);
+				.signup-form-label {
+					flex: 1 1 100%;
+					margin: 0 0 10px 0;
+					background-color: #fff;
+					border: 0;
+					.signup-form-floating-placeholder.float {
+						color: #fff;
+						opacity: 1;
+					}
+				}
+				.btn {
+					flex: 0 0 180px;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 1024px) {}
